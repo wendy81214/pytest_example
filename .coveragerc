@@ -1,0 +1,8 @@
+[run]
+omit = api/my_log.py
+
+[report]
+exclude_lines =
+    if __name__ == .__main__.:
+    except ImportError:
+    pass
