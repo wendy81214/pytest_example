@@ -1,0 +1,4 @@
+pytest-cov
+html
+mock
+pyarrow
