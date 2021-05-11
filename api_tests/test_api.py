@@ -61,17 +61,10 @@ def test_recommend_by_customer_id_exception(mocker, app, client,
     # === patch get_data_for_recommend ===
     mocker.patch('api.get_data_for_recommend', return_value=dict())
 
-    # === patch requests.post ===
-    class MockResponse:
-        def __init__(self, json_data, status_code):
-            self.json_data = json_data
-            self.status_code = status_code
-
-        def json(self):
-            return self.json_data
-
+    # === patch api.requests.post with HTTPError ===
     mocker.patch('api.requests.post',
                  side_effect=requests.exceptions.HTTPError())
+
     res = client.post('/recommend_by_customer_id', query_string=api_query)
     assert res.status_code == 200
     assert json.loads(res.get_data(as_text=True))['status_code'] == api_status_code
