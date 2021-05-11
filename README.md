@@ -7,5 +7,5 @@ pytest 遵循標準的 test discovery rules，幾點要領：
 ## Quickstart
 ### 安裝 pytest 與相關會用到的套件
 ```shell
-pip install pytest pytest-cov pytest-mock
+pip install -r requirements.txt
 ```
