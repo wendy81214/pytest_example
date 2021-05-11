@@ -5,6 +5,10 @@ pytest 遵循標準的 test discovery rules，幾點要領：
 - 函數與類別內的方法都必須要 `test_` 做為 prefix
 
 ## Quickstart
+### 取得會用到的範例 code
+```shell
+git clone git@github.com:wendy81214/pytest_example.git
+```
 ### 安裝 pytest 與相關會用到的套件
 ```shell
 pip install -r requirements.txt
